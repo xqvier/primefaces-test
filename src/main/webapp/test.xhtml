@@ -11,6 +11,12 @@
     <h:body>
         
         <h1>#{testView.testString}</h1>
-        
+        <h:form>
+	        <p:selectOneMenu value="#{testView.selectedKey}">
+	        	<f:selectItems var="enclosingObj" value="#{testView.myList}" itemValue="#{enclosingObj.key}" itemLabel="#{enclosingObj.myObj}"/>
+	        </p:selectOneMenu>
+        	<p:commandButton value="submit" ajax="false"/>
+        </h:form>
+        Selected : #{testView.selectedKey}
     </h:body>
 </html>
